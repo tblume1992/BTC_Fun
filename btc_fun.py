@@ -13,7 +13,8 @@ price_change_window = 120
 price_change_threshold = .2
 
 #Import BTC Historical 1 minute Prices
-master_link = pd.read_csv('C:\\Users\\t-blu\\Downloads\\btc_fun.csv',  delimiter=',')
+'''Path to File Downloaded from Kaggle'''
+master_link = pd.read_csv(PATH,  delimiter=',')
 #Calculate Price Change during window
 master_link['Difference'] = master_link['Weighted_Price'].diff(price_change_window)/master_link['Weighted_Price']
 #Pull only values that are larger or equal to the price change threshold

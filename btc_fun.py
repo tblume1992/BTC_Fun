@@ -31,7 +31,7 @@ while count < len(binary_list):
     look = master_link.loc[:binary_list[count]]
     hourly_trend = look.tail(period)
     hourly_difference = pd.DataFrame(hourly_trend['Difference'])
-    
+    #This ended up being faster than appending or any other ways I tried
     trend = [trend, hourly_difference]
     trend = np.column_stack(trend)
     trend = pd.DataFrame(trend)
